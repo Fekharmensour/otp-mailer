@@ -22,7 +22,7 @@ Publish configuration
 The package ships a config file. Publish it with this command:
 
 ```bash
-php artisan vendor:publish --provider="Fekharmensour\\OtpMailer\\OtpMailerServiceProvider" --tag=config
+php artisan vendor:publish --provider="Fekharmensour\OtpMailer\OtpMailerServiceProvider" --tag=config
 ```
 
 This will copy `config/otp-mailer.php` to your application's config folder. You can also copy `config/otp-auth.php` from the package if you need the legacy compatibility file.
@@ -53,8 +53,9 @@ The package exposes a facade `OtpMailer` (and backward-compatible `OtpAuth`). Us
 Example route (routes/web.php):
 
 ```php
-use Illuminate\\Support\\Facades\\Route;
-use Fekharmensour\\OtpMailer\\Facades\\OtpMailer; // or simply `OtpMailer` if alias is registered
+
+use Fekharmensour\OtpMailer\Facades\OtpMailer;
+use Illuminate\Http\Request;
 
 Route::get('/send-otp', function () {
 	$email = 'user@example.com';
@@ -79,7 +80,7 @@ Usage (controller)
 In a controller you can call the same facade methods:
 
 ```php
-use Fekharmensour\\OtpMailer\\Facades\\OtpMailer;
+use Fekharmensour\OtpMailer\Facades\OtpMailer;
 
 public function send(Request $request)
 {
