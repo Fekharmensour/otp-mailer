@@ -1,0 +1,33 @@
+{
+    "name": "fekharmensour/otp-mailer",
+    "description": "Standalone OTP mailer package for Laravel (send OTP codes)",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fekharmensour",
+            "email": "fekharmensour@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fekharmensour\\OtpMailer\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fekharmensour\\OtpMailer\\OtpMailerServiceProvider"
+            ],
+            "aliases": {
+                "OtpMailer": "Fekharmensour\\OtpMailer\\Facades\\OtpMailer"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
